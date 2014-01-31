@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-31T21:24:09Z" product-name="dst14_vereine">
+		<header/>
+		<body>
+
+			<trans-unit id="namelv.description">
+				<source>namelv</source>
+			</trans-unit>
+			<trans-unit id="lvweb.description">
+				<source>lvweb</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

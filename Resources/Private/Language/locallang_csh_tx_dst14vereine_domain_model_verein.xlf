@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-31T21:24:09Z" product-name="dst14_vereine">
+		<header/>
+		<body>
+
+			<trans-unit id="name.description">
+				<source>Vereinsname</source>
+			</trans-unit>
+			<trans-unit id="strasse.description">
+				<source>Straße und Hausnummer</source>
+			</trans-unit>
+			<trans-unit id="postfach.description">
+				<source>Postfach</source>
+			</trans-unit>
+			<trans-unit id="p_l_z.description">
+				<source>Postleitzahl</source>
+			</trans-unit>
+			<trans-unit id="ort.description">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="land.description">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="webseite.description">
+				<source>Webseite</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>Emailadresse</source>
+			</trans-unit>
+			<trans-unit id="lat.description">
+				<source>lat</source>
+			</trans-unit>
+			<trans-unit id="lng.description">
+				<source>lng</source>
+			</trans-unit>
+			<trans-unit id="lv.description">
+				<source>lv</source>
+			</trans-unit>
+			<trans-unit id="ansprechpartner.description">
+				<source>ansprechpartner</source>
+			</trans-unit>
+			<trans-unit id="sportarten.description">
+				<source>sportarten</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

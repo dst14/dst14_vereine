@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-31T21:24:09Z" product-name="dst14_vereine">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_dst14vereine_domain_model_verein">
+				<source>Verein</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.strasse">
+				<source>Strasse</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.postfach">
+				<source>Postfach</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.p_l_z">
+				<source>P L Z</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.ort">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.land">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.webseite">
+				<source>Webseite</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.lat">
+				<source>Lat</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.lng">
+				<source>Lng</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.lv">
+				<source>Lv</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.ansprechpartner">
+				<source>Ansprechpartner</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_verein.sportarten">
+				<source>Sportarten</source>
+			</trans-unit>
+
+			<trans-unit id="tx_dst14vereine_domain_model_sportarten">
+				<source>Sportarten</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_sportarten.bezeichnung">
+				<source>Bezeichnung</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_sportarten.fachbereich">
+				<source>Fachbereich</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_sportarten.fbweb">
+				<source>Fbweb</source>
+			</trans-unit>
+
+			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende">
+				<source>Landesverbaende</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende.namelv">
+				<source>Namelv</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende.lvweb">
+				<source>Lvweb</source>
+			</trans-unit>
+
+			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner">
+				<source>Ansprechpartner</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.vorname">
+				<source>Vorname</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.tel">
+				<source>Tel</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.tel2">
+				<source>Tel2</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.mobil">
+				<source>Mobil</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.bemerkungen">
+				<source>Bemerkungen</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

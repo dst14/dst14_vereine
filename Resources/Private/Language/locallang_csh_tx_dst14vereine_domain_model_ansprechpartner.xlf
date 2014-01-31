@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-31T21:24:09Z" product-name="dst14_vereine">
+		<header/>
+		<body>
+
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="vorname.description">
+				<source>vorname</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="tel.description">
+				<source>tel</source>
+			</trans-unit>
+			<trans-unit id="fax.description">
+				<source>fax</source>
+			</trans-unit>
+			<trans-unit id="tel2.description">
+				<source>tel2</source>
+			</trans-unit>
+			<trans-unit id="mobil.description">
+				<source>mobil</source>
+			</trans-unit>
+			<trans-unit id="bemerkungen.description">
+				<source>bemerkungen</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
