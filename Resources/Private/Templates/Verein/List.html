@@ -1,0 +1,54 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Verein</h1>
+
+<f:flashMessages />
+
+<table  class="tx_dst14vereine" >
+	<tr>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.name" /></th>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.strasse" /></th>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.postfach" /></th>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.p_l_z" /></th>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.ort" /></th>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.land" /></th>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.webseite" /></th>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.email" /></th>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.lat" /></th>
+		<th><f:translate key="tx_dst14vereine_domain_model_verein.lng" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{vereins}" as="verein">
+		<tr>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.strasse}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.postfach}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.pLZ}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.ort}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.land}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.webseite}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.lat}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{verein : verein}"> {verein.lng}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{verein : verein}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{verein : verein}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Verein</f:link.action>
+</f:section>

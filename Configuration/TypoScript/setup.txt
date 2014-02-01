@@ -1,0 +1,51 @@
+plugin.tx_dst14vereine {
+	view {
+		templateRootPath = {$plugin.tx_dst14vereine.view.templateRootPath}
+		partialRootPath = {$plugin.tx_dst14vereine.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_dst14vereine.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_dst14vereine.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_dst14vereine._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-dst14-vereine table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-dst14-vereine table th {
+		font-weight:bold;
+	}
+
+	.tx-dst14-vereine table td {
+		vertical-align:top;
+	}
+)
+
+ # Module configuration
+module.tx_dst14vereine {
+	persistence {
+		storagePid = {$module.tx_dst14vereine.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_dst14vereine.view.templateRootPath}
+		partialRootPath = {$module.tx_dst14vereine.view.partialRootPath}
+		layoutRootPath = {$module.tx_dst14vereine.view.layoutRootPath}
+	}
+}

@@ -17,8 +17,8 @@ Extension Name
 :Description: manuals covering TYPO3 extension "Vereinsdatenbank und -karte"
 :Language: en
 :Author: Daniel Stange
-:Creation: 2014-01-31
-:Generation: 21:24
+:Creation: 2014-02-01
+:Generation: 11:18
 :Licence: Open Content License available from `www.opencontent.org/opl.shtml <http://www.opencontent.org/opl.shtml>`_
 
 The content of this document is related to TYPO3, a GNU/GPL CMS/Framework available from `www.typo3.org

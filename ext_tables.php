@@ -3,6 +3,38 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	$_EXTKEY,
+	'Vereine',
+	'Vereinsdatenbank'
+);
+
+$pluginSignature = str_replace('_','',$_EXTKEY) . '_vereine';
+$TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_vereine.xml');
+
+if (TYPO3_MODE === 'BE') {
+
+	/**
+	 * Registers a Backend Module
+	 */
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+		'DanielStange.' . $_EXTKEY,
+		'web',	 // Make module a submodule of 'web'
+		'vereine',	// Submodule key
+		'',						// Position
+		array(
+			'Verein' => 'list, show, new, create, edit, update, delete','Sportarten' => 'list, show, new, create, edit, update, delete','Landesverbaende' => 'list, show, new, create, edit, update, delete','Ansprechpartner' => 'list, show, new, create, edit, update, delete',
+		),
+		array(
+			'access' => 'user,group',
+			'icon'   => 'EXT:' . $_EXTKEY . '/ext_icon.gif',
+			'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_vereine.xlf',
+		)
+	);
+
+}
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Vereinsdatenbank und -karte');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_dst14vereine_domain_model_verein', 'EXT:dst14_vereine/Resources/Private/Language/locallang_csh_tx_dst14vereine_domain_model_verein.xlf');
