@@ -1,11 +1,12 @@
 <?php
 
-namespace DanielStange\Dst14Vereine\Tests;
+namespace DanielStange\Dst14Vereine\Tests\Unit\Domain\Model;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,258 +29,320 @@ namespace DanielStange\Dst14Vereine\Tests;
 /**
  * Test case for class \DanielStange\Dst14Vereine\Domain\Model\Verein.
  *
- * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage Vereinsdatenbank und -karte
- *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class VereinTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class VereinTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @var \DanielStange\Dst14Vereine\Domain\Model\Verein
 	 */
-	protected $fixture;
+	protected $subject = NULL;
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\Dst14Vereine\Domain\Model\Verein();
+	protected function setUp() {
+		$this->subject = new \DanielStange\Dst14Vereine\Domain\Model\Verein();
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getNameReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setNameForStringSetsName() { 
-		$this->fixture->setName('Conceived at T3CON10');
-
+	public function getNameReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getName()
+			'',
+			$this->subject->getName()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getStrasseReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setStrasseForStringSetsStrasse() { 
-		$this->fixture->setStrasse('Conceived at T3CON10');
+	public function setNameForStringSetsName() {
+		$this->subject->setName('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getStrasse()
+			'name',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getPostfachReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setPostfachForStringSetsPostfach() { 
-		$this->fixture->setPostfach('Conceived at T3CON10');
-
+	public function getStrasseReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getPostfach()
+			'',
+			$this->subject->getStrasse()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getPLZReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setPLZForStringSetsPLZ() { 
-		$this->fixture->setPLZ('Conceived at T3CON10');
+	public function setStrasseForStringSetsStrasse() {
+		$this->subject->setStrasse('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getPLZ()
+			'strasse',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getOrtReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setOrtForStringSetsOrt() { 
-		$this->fixture->setOrt('Conceived at T3CON10');
-
+	public function getPostfachReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getOrt()
+			'',
+			$this->subject->getPostfach()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getLandReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setLandForStringSetsLand() { 
-		$this->fixture->setLand('Conceived at T3CON10');
+	public function setPostfachForStringSetsPostfach() {
+		$this->subject->setPostfach('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getLand()
+			'postfach',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getWebseiteReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setWebseiteForStringSetsWebseite() { 
-		$this->fixture->setWebseite('Conceived at T3CON10');
-
+	public function getPLZReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getWebseite()
+			'',
+			$this->subject->getPLZ()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getEmailReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setEmailForStringSetsEmail() { 
-		$this->fixture->setEmail('Conceived at T3CON10');
+	public function setPLZForStringSetsPLZ() {
+		$this->subject->setPLZ('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getEmail()
+			'pLZ',
+			$this->subject
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getLatReturnsInitialValueForFloat() { 
+	public function getOrtReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getOrt()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setOrtForStringSetsOrt() {
+		$this->subject->setOrt('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'ort',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getLandReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getLand()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setLandForStringSetsLand() {
+		$this->subject->setLand('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'land',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getWebseiteReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getWebseite()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setWebseiteForStringSetsWebseite() {
+		$this->subject->setWebseite('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'webseite',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getEmailReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getEmail()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setEmailForStringSetsEmail() {
+		$this->subject->setEmail('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'email',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getLatReturnsInitialValueForFloat() {
 		$this->assertSame(
 			0.0,
-			$this->fixture->getLat()
+			$this->subject->getLat()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setLatForFloatSetsLat() { 
-		$this->fixture->setLat(3.14159265);
+	public function setLatForFloatSetsLat() {
+		$this->subject->setLat(3.14159265);
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			3.14159265,
-			$this->fixture->getLat()
+			'lat',
+			$this->subject,
+			'',
+			0.000000001
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getLngReturnsInitialValueForFloat() { 
+	public function getLngReturnsInitialValueForFloat() {
 		$this->assertSame(
 			0.0,
-			$this->fixture->getLng()
+			$this->subject->getLng()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setLngForFloatSetsLng() { 
-		$this->fixture->setLng(3.14159265);
+	public function setLngForFloatSetsLng() {
+		$this->subject->setLng(3.14159265);
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			3.14159265,
-			$this->fixture->getLng()
+			'lng',
+			$this->subject,
+			'',
+			0.000000001
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getLvReturnsInitialValueForLandesverbaende() { }
 
 	/**
 	 * @test
 	 */
-	public function setLvForLandesverbaendeSetsLv() { }
-	
+	public function getLvReturnsInitialValueForLandesverbaende() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getLv()
+		);
+	}
+
 	/**
 	 * @test
 	 */
-	public function getAnsprechpartnerReturnsInitialValueForAnsprechpartner() { 
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+	public function setLvForLandesverbaendeSetsLv() {
+		$lvFixture = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
+		$this->subject->setLv($lvFixture);
+
+		$this->assertAttributeEquals(
+			$lvFixture,
+			'lv',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getAnsprechpartnerReturnsInitialValueForAnsprechpartner() {
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->fixture->getAnsprechpartner()
+			$this->subject->getAnsprechpartner()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setAnsprechpartnerForObjectStorageContainingAnsprechpartnerSetsAnsprechpartner() { 
+	public function setAnsprechpartnerForObjectStorageContainingAnsprechpartnerSetsAnsprechpartner() {
 		$ansprechpartner = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
-		$objectStorageHoldingExactlyOneAnsprechpartner = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneAnsprechpartner = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneAnsprechpartner->attach($ansprechpartner);
-		$this->fixture->setAnsprechpartner($objectStorageHoldingExactlyOneAnsprechpartner);
+		$this->subject->setAnsprechpartner($objectStorageHoldingExactlyOneAnsprechpartner);
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			$objectStorageHoldingExactlyOneAnsprechpartner,
-			$this->fixture->getAnsprechpartner()
+			'ansprechpartner',
+			$this->subject
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
 	public function addAnsprechpartnerToObjectStorageHoldingAnsprechpartner() {
 		$ansprechpartner = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
-		$objectStorageHoldingExactlyOneAnsprechpartner = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$objectStorageHoldingExactlyOneAnsprechpartner->attach($ansprechpartner);
-		$this->fixture->addAnsprechpartner($ansprechpartner);
+		$ansprechpartnerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$ansprechpartnerObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($ansprechpartner));
+		$this->inject($this->subject, 'ansprechpartner', $ansprechpartnerObjectStorageMock);
 
-		$this->assertEquals(
-			$objectStorageHoldingExactlyOneAnsprechpartner,
-			$this->fixture->getAnsprechpartner()
-		);
+		$this->subject->addAnsprechpartner($ansprechpartner);
 	}
 
 	/**
@@ -287,57 +350,51 @@ class VereinTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 */
 	public function removeAnsprechpartnerFromObjectStorageHoldingAnsprechpartner() {
 		$ansprechpartner = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
-		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$localObjectStorage->attach($ansprechpartner);
-		$localObjectStorage->detach($ansprechpartner);
-		$this->fixture->addAnsprechpartner($ansprechpartner);
-		$this->fixture->removeAnsprechpartner($ansprechpartner);
+		$ansprechpartnerObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$ansprechpartnerObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($ansprechpartner));
+		$this->inject($this->subject, 'ansprechpartner', $ansprechpartnerObjectStorageMock);
 
-		$this->assertEquals(
-			$localObjectStorage,
-			$this->fixture->getAnsprechpartner()
-		);
+		$this->subject->removeAnsprechpartner($ansprechpartner);
+
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getSportartenReturnsInitialValueForSportarten() { 
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+	public function getSportartenReturnsInitialValueForSportarten() {
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->fixture->getSportarten()
+			$this->subject->getSportarten()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setSportartenForObjectStorageContainingSportartenSetsSportarten() { 
+	public function setSportartenForObjectStorageContainingSportartenSetsSportarten() {
 		$sportarten = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
-		$objectStorageHoldingExactlyOneSportarten = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneSportarten = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneSportarten->attach($sportarten);
-		$this->fixture->setSportarten($objectStorageHoldingExactlyOneSportarten);
+		$this->subject->setSportarten($objectStorageHoldingExactlyOneSportarten);
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			$objectStorageHoldingExactlyOneSportarten,
-			$this->fixture->getSportarten()
+			'sportarten',
+			$this->subject
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
 	public function addSportartenToObjectStorageHoldingSportarten() {
 		$sportarten = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
-		$objectStorageHoldingExactlyOneSportarten = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$objectStorageHoldingExactlyOneSportarten->attach($sportarten);
-		$this->fixture->addSportarten($sportarten);
+		$sportartenObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$sportartenObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($sportarten));
+		$this->inject($this->subject, 'sportarten', $sportartenObjectStorageMock);
 
-		$this->assertEquals(
-			$objectStorageHoldingExactlyOneSportarten,
-			$this->fixture->getSportarten()
-		);
+		$this->subject->addSportarten($sportarten);
 	}
 
 	/**
@@ -345,17 +402,11 @@ class VereinTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 */
 	public function removeSportartenFromObjectStorageHoldingSportarten() {
 		$sportarten = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
-		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$localObjectStorage->attach($sportarten);
-		$localObjectStorage->detach($sportarten);
-		$this->fixture->addSportarten($sportarten);
-		$this->fixture->removeSportarten($sportarten);
+		$sportartenObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$sportartenObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($sportarten));
+		$this->inject($this->subject, 'sportarten', $sportartenObjectStorageMock);
 
-		$this->assertEquals(
-			$localObjectStorage,
-			$this->fixture->getSportarten()
-		);
+		$this->subject->removeSportarten($sportarten);
+
 	}
-	
 }
-?>

@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\Dst14Vereine\Controller;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,11 +28,7 @@ namespace DanielStange\Dst14Vereine\Controller;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst14_vereine
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * SportartenController
  */
 class SportartenController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
@@ -58,7 +56,7 @@ class SportartenController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * action new
 	 *
 	 * @param \DanielStange\Dst14Vereine\Domain\Model\Sportarten $newSportarten
-	 * @dontvalidate $newSportarten
+	 * @ignorevalidation $newSportarten
 	 * @return void
 	 */
 	public function newAction(\DanielStange\Dst14Vereine\Domain\Model\Sportarten $newSportarten = NULL) {
@@ -72,8 +70,8 @@ class SportartenController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * @return void
 	 */
 	public function createAction(\DanielStange\Dst14Vereine\Domain\Model\Sportarten $newSportarten) {
+		$this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->sportartenRepository->add($newSportarten);
-		$this->flashMessageContainer->add('Your new Sportarten was created.');
 		$this->redirect('list');
 	}
 
@@ -81,6 +79,7 @@ class SportartenController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * action edit
 	 *
 	 * @param \DanielStange\Dst14Vereine\Domain\Model\Sportarten $sportarten
+	 * @ignorevalidation $sportarten
 	 * @return void
 	 */
 	public function editAction(\DanielStange\Dst14Vereine\Domain\Model\Sportarten $sportarten) {
@@ -94,8 +93,8 @@ class SportartenController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * @return void
 	 */
 	public function updateAction(\DanielStange\Dst14Vereine\Domain\Model\Sportarten $sportarten) {
+		$this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->sportartenRepository->update($sportarten);
-		$this->flashMessageContainer->add('Your Sportarten was updated.');
 		$this->redirect('list');
 	}
 
@@ -106,10 +105,9 @@ class SportartenController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * @return void
 	 */
 	public function deleteAction(\DanielStange\Dst14Vereine\Domain\Model\Sportarten $sportarten) {
+		$this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->sportartenRepository->remove($sportarten);
-		$this->flashMessageContainer->add('Your Sportarten was removed.');
 		$this->redirect('list');
 	}
 
 }
-?>

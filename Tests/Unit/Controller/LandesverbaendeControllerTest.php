@@ -1,5 +1,5 @@
 <?php
-namespace DanielStange\Dst14Vereine\Tests;
+namespace DanielStange\Dst14Vereine\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,37 +25,118 @@ namespace DanielStange\Dst14Vereine\Tests;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Dst14_vereine_Controller_LandesverbaendeController.
- *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
- * @package TYPO3
- * @subpackage Vereinsdatenbank und -karte
+ * Test case for class DanielStange\Dst14Vereine\Controller\LandesverbaendeController.
  *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class LandesverbaendeControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
+class LandesverbaendeControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
+	/**
+	 * @var \DanielStange\Dst14Vereine\Controller\LandesverbaendeController
+	 */
+	protected $subject = NULL;
+
+	protected function setUp() {
+		$this->subject = $this->getMock('DanielStange\\Dst14Vereine\\Controller\\LandesverbaendeController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	public function listActionFetchesAllLandesverbaendesFromRepositoryAndAssignsThemToView() {
+
+		$allLandesverbaendes = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+
+		$landesverbaendeRepository = $this->getMock('', array('findAll'), array(), '', FALSE);
+		$landesverbaendeRepository->expects($this->once())->method('findAll')->will($this->returnValue($allLandesverbaendes));
+		$this->inject($this->subject, 'landesverbaendeRepository', $landesverbaendeRepository);
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('landesverbaendes', $allLandesverbaendes);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->listAction();
 	}
 
+	/**
+	 * @test
+	 */
+	public function showActionAssignsTheGivenLandesverbaendeToView() {
+		$landesverbaende = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('landesverbaende', $landesverbaende);
+
+		$this->subject->showAction($landesverbaende);
+	}
+
+	/**
+	 * @test
+	 */
+	public function newActionAssignsTheGivenLandesverbaendeToView() {
+		$landesverbaende = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('newLandesverbaende', $landesverbaende);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->newAction($landesverbaende);
+	}
+
+	/**
+	 * @test
+	 */
+	public function createActionAddsTheGivenLandesverbaendeToLandesverbaendeRepository() {
+		$landesverbaende = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
+
+		$landesverbaendeRepository = $this->getMock('', array('add'), array(), '', FALSE);
+		$landesverbaendeRepository->expects($this->once())->method('add')->with($landesverbaende);
+		$this->inject($this->subject, 'landesverbaendeRepository', $landesverbaendeRepository);
+
+		$this->subject->createAction($landesverbaende);
+	}
+
+	/**
+	 * @test
+	 */
+	public function editActionAssignsTheGivenLandesverbaendeToView() {
+		$landesverbaende = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('landesverbaende', $landesverbaende);
+
+		$this->subject->editAction($landesverbaende);
+	}
+
+	/**
+	 * @test
+	 */
+	public function updateActionUpdatesTheGivenLandesverbaendeInLandesverbaendeRepository() {
+		$landesverbaende = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
+
+		$landesverbaendeRepository = $this->getMock('', array('update'), array(), '', FALSE);
+		$landesverbaendeRepository->expects($this->once())->method('update')->with($landesverbaende);
+		$this->inject($this->subject, 'landesverbaendeRepository', $landesverbaendeRepository);
+
+		$this->subject->updateAction($landesverbaende);
+	}
+
+	/**
+	 * @test
+	 */
+	public function deleteActionRemovesTheGivenLandesverbaendeFromLandesverbaendeRepository() {
+		$landesverbaende = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
+
+		$landesverbaendeRepository = $this->getMock('', array('remove'), array(), '', FALSE);
+		$landesverbaendeRepository->expects($this->once())->method('remove')->with($landesverbaende);
+		$this->inject($this->subject, 'landesverbaendeRepository', $landesverbaendeRepository);
+
+		$this->subject->deleteAction($landesverbaende);
+	}
 }
-?>

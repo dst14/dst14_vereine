@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\Dst14Vereine\Domain\Model;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,33 +28,55 @@ namespace DanielStange\Dst14Vereine\Domain\Model;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst14_vereine
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Landesverbaende
  */
 class Landesverbaende extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 
 	/**
+	 * bundesland
+	 *
+	 * @var string
+	 */
+	protected $bundesland = '';
+
+	/**
 	 * namelv
 	 *
-	 * @var \string
+	 * @var string
 	 * @validate NotEmpty
 	 */
-	protected $namelv;
+	protected $namelv = '';
 
 	/**
 	 * lvweb
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $lvweb;
+	protected $lvweb = '';
+
+	/**
+	 * Returns the bundesland
+	 *
+	 * @return string $bundesland
+	 */
+	public function getBundesland() {
+		return $this->bundesland;
+	}
+
+	/**
+	 * Sets the bundesland
+	 *
+	 * @param string $bundesland
+	 * @return void
+	 */
+	public function setBundesland($bundesland) {
+		$this->bundesland = $bundesland;
+	}
 
 	/**
 	 * Returns the namelv
 	 *
-	 * @return \string $namelv
+	 * @return string $namelv
 	 */
 	public function getNamelv() {
 		return $this->namelv;
@@ -61,7 +85,7 @@ class Landesverbaende extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	/**
 	 * Sets the namelv
 	 *
-	 * @param \string $namelv
+	 * @param string $namelv
 	 * @return void
 	 */
 	public function setNamelv($namelv) {
@@ -71,7 +95,7 @@ class Landesverbaende extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	/**
 	 * Returns the lvweb
 	 *
-	 * @return \string $lvweb
+	 * @return string $lvweb
 	 */
 	public function getLvweb() {
 		return $this->lvweb;
@@ -80,7 +104,7 @@ class Landesverbaende extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	/**
 	 * Sets the lvweb
 	 *
-	 * @param \string $lvweb
+	 * @param string $lvweb
 	 * @return void
 	 */
 	public function setLvweb($lvweb) {
@@ -88,4 +112,3 @@ class Landesverbaende extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	}
 
 }
-?>

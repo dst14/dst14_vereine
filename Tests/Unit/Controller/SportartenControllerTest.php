@@ -1,5 +1,5 @@
 <?php
-namespace DanielStange\Dst14Vereine\Tests;
+namespace DanielStange\Dst14Vereine\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,37 +25,118 @@ namespace DanielStange\Dst14Vereine\Tests;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Dst14_vereine_Controller_SportartenController.
- *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
- * @package TYPO3
- * @subpackage Vereinsdatenbank und -karte
+ * Test case for class DanielStange\Dst14Vereine\Controller\SportartenController.
  *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class SportartenControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
+class SportartenControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
+	/**
+	 * @var \DanielStange\Dst14Vereine\Controller\SportartenController
+	 */
+	protected $subject = NULL;
+
+	protected function setUp() {
+		$this->subject = $this->getMock('DanielStange\\Dst14Vereine\\Controller\\SportartenController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	public function listActionFetchesAllSportartensFromRepositoryAndAssignsThemToView() {
+
+		$allSportartens = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+
+		$sportartenRepository = $this->getMock('', array('findAll'), array(), '', FALSE);
+		$sportartenRepository->expects($this->once())->method('findAll')->will($this->returnValue($allSportartens));
+		$this->inject($this->subject, 'sportartenRepository', $sportartenRepository);
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('sportartens', $allSportartens);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->listAction();
 	}
 
+	/**
+	 * @test
+	 */
+	public function showActionAssignsTheGivenSportartenToView() {
+		$sportarten = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('sportarten', $sportarten);
+
+		$this->subject->showAction($sportarten);
+	}
+
+	/**
+	 * @test
+	 */
+	public function newActionAssignsTheGivenSportartenToView() {
+		$sportarten = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('newSportarten', $sportarten);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->newAction($sportarten);
+	}
+
+	/**
+	 * @test
+	 */
+	public function createActionAddsTheGivenSportartenToSportartenRepository() {
+		$sportarten = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
+
+		$sportartenRepository = $this->getMock('', array('add'), array(), '', FALSE);
+		$sportartenRepository->expects($this->once())->method('add')->with($sportarten);
+		$this->inject($this->subject, 'sportartenRepository', $sportartenRepository);
+
+		$this->subject->createAction($sportarten);
+	}
+
+	/**
+	 * @test
+	 */
+	public function editActionAssignsTheGivenSportartenToView() {
+		$sportarten = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('sportarten', $sportarten);
+
+		$this->subject->editAction($sportarten);
+	}
+
+	/**
+	 * @test
+	 */
+	public function updateActionUpdatesTheGivenSportartenInSportartenRepository() {
+		$sportarten = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
+
+		$sportartenRepository = $this->getMock('', array('update'), array(), '', FALSE);
+		$sportartenRepository->expects($this->once())->method('update')->with($sportarten);
+		$this->inject($this->subject, 'sportartenRepository', $sportartenRepository);
+
+		$this->subject->updateAction($sportarten);
+	}
+
+	/**
+	 * @test
+	 */
+	public function deleteActionRemovesTheGivenSportartenFromSportartenRepository() {
+		$sportarten = new \DanielStange\Dst14Vereine\Domain\Model\Sportarten();
+
+		$sportartenRepository = $this->getMock('', array('remove'), array(), '', FALSE);
+		$sportartenRepository->expects($this->once())->method('remove')->with($sportarten);
+		$this->inject($this->subject, 'sportartenRepository', $sportartenRepository);
+
+		$this->subject->deleteAction($sportarten);
+	}
 }
-?>

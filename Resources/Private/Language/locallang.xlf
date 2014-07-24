@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-01T11:17:57Z" product-name="dst14_vereine">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-18T15:52:39Z" product-name="dst14_vereine">
 		<header/>
 		<body>
-
 			<trans-unit id="tx_dst14vereine_domain_model_verein">
 				<source>Verein</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.name">
-				<source>Vereinsname</source>
+				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.strasse">
-				<source>Straße und Hausnummer</source>
+				<source>Strasse</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.postfach">
 				<source>Postfach</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.p_l_z">
-				<source>Postleitzahl</source>
+				<source>P L Z</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.ort">
 				<source>Ort</source>
@@ -29,75 +28,74 @@
 				<source>Webseite</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.email">
-				<source>Emailadresse</source>
+				<source>Email</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.lat">
-				<source>lat</source>
+				<source>Lat</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.lng">
-				<source>lng</source>
+				<source>Lng</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.lv">
-				<source>lv</source>
+				<source>Lv</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.ansprechpartner">
-				<source>ansprechpartner</source>
+				<source>Ansprechpartner</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_verein.sportarten">
-				<source>sportarten</source>
+				<source>Sportarten</source>
 			</trans-unit>
-			
 			<trans-unit id="tx_dst14vereine_domain_model_sportarten">
-				<source>Sportartenauswahl</source>
+				<source>Sportarten</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_sportarten.bezeichnung">
-				<source>bezeichnung</source>
+				<source>Bezeichnung</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_sportarten.fachbereich">
-				<source>fachbereich</source>
+				<source>Fachbereich</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_sportarten.fbweb">
-				<source>fachbereichswebseite</source>
+				<source>Fbweb</source>
 			</trans-unit>
-			
 			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende">
 				<source>Landesverbaende</source>
 			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende.bundesland">
+				<source>Bundesland</source>
+			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende.namelv">
-				<source>namelv</source>
+				<source>Namelv</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende.lvweb">
-				<source>lvweb</source>
+				<source>Lvweb</source>
 			</trans-unit>
-			
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner">
 				<source>Ansprechpartner</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.name">
-				<source>name</source>
+				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.vorname">
-				<source>vorname</source>
+				<source>Vorname</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.email">
-				<source>email</source>
+				<source>Email</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.tel">
-				<source>tel</source>
+				<source>Tel</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.fax">
-				<source>fax</source>
+				<source>Fax</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.tel2">
-				<source>tel2</source>
+				<source>Tel2</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.mobil">
-				<source>mobil</source>
+				<source>Mobil</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.bemerkungen">
-				<source>bemerkungen</source>
+				<source>Bemerkungen</source>
 			</trans-unit>
-			
 		</body>
 	</file>
 </xliff>

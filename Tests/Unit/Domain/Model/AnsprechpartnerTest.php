@@ -1,11 +1,12 @@
 <?php
 
-namespace DanielStange\Dst14Vereine\Tests;
+namespace DanielStange\Dst14Vereine\Tests\Unit\Domain\Model;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,164 +29,206 @@ namespace DanielStange\Dst14Vereine\Tests;
 /**
  * Test case for class \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner.
  *
- * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage Vereinsdatenbank und -karte
- *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class AnsprechpartnerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class AnsprechpartnerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @var \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner
 	 */
-	protected $fixture;
+	protected $subject = NULL;
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
+	protected function setUp() {
+		$this->subject = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getNameReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setNameForStringSetsName() { 
-		$this->fixture->setName('Conceived at T3CON10');
-
+	public function getNameReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getName()
+			'',
+			$this->subject->getName()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getVornameReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setVornameForStringSetsVorname() { 
-		$this->fixture->setVorname('Conceived at T3CON10');
+	public function setNameForStringSetsName() {
+		$this->subject->setName('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getVorname()
+			'name',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getEmailReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setEmailForStringSetsEmail() { 
-		$this->fixture->setEmail('Conceived at T3CON10');
-
+	public function getVornameReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getEmail()
+			'',
+			$this->subject->getVorname()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getTelReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setTelForStringSetsTel() { 
-		$this->fixture->setTel('Conceived at T3CON10');
+	public function setVornameForStringSetsVorname() {
+		$this->subject->setVorname('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getTel()
+			'vorname',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getFaxReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setFaxForStringSetsFax() { 
-		$this->fixture->setFax('Conceived at T3CON10');
-
+	public function getEmailReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getFax()
+			'',
+			$this->subject->getEmail()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getTel2ReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setTel2ForStringSetsTel2() { 
-		$this->fixture->setTel2('Conceived at T3CON10');
+	public function setEmailForStringSetsEmail() {
+		$this->subject->setEmail('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getTel2()
+			'email',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getMobilReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setMobilForStringSetsMobil() { 
-		$this->fixture->setMobil('Conceived at T3CON10');
-
+	public function getTelReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getMobil()
+			'',
+			$this->subject->getTel()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getBemerkungenReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setBemerkungenForStringSetsBemerkungen() { 
-		$this->fixture->setBemerkungen('Conceived at T3CON10');
+	public function setTelForStringSetsTel() {
+		$this->subject->setTel('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getBemerkungen()
+			'tel',
+			$this->subject
 		);
 	}
-	
+
+	/**
+	 * @test
+	 */
+	public function getFaxReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getFax()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setFaxForStringSetsFax() {
+		$this->subject->setFax('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'fax',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getTel2ReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getTel2()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setTel2ForStringSetsTel2() {
+		$this->subject->setTel2('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'tel2',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getMobilReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getMobil()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setMobilForStringSetsMobil() {
+		$this->subject->setMobil('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'mobil',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getBemerkungenReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getBemerkungen()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setBemerkungenForStringSetsBemerkungen() {
+		$this->subject->setBemerkungen('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'bemerkungen',
+			$this->subject
+		);
+	}
 }
-?>

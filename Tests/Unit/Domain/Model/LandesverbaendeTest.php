@@ -1,11 +1,12 @@
 <?php
 
-namespace DanielStange\Dst14Vereine\Tests;
+namespace DanielStange\Dst14Vereine\Tests\Unit\Domain\Model;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,62 +29,91 @@ namespace DanielStange\Dst14Vereine\Tests;
 /**
  * Test case for class \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende.
  *
- * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage Vereinsdatenbank und -karte
- *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class LandesverbaendeTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class LandesverbaendeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @var \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende
 	 */
-	protected $fixture;
+	protected $subject = NULL;
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
+	protected function setUp() {
+		$this->subject = new \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende();
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getNamelvReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setNamelvForStringSetsNamelv() { 
-		$this->fixture->setNamelv('Conceived at T3CON10');
-
+	public function getBundeslandReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getNamelv()
+			'',
+			$this->subject->getBundesland()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getLvwebReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setLvwebForStringSetsLvweb() { 
-		$this->fixture->setLvweb('Conceived at T3CON10');
+	public function setBundeslandForStringSetsBundesland() {
+		$this->subject->setBundesland('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getLvweb()
+			'bundesland',
+			$this->subject
 		);
 	}
-	
+
+	/**
+	 * @test
+	 */
+	public function getNamelvReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getNamelv()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setNamelvForStringSetsNamelv() {
+		$this->subject->setNamelv('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'namelv',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getLvwebReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getLvweb()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setLvwebForStringSetsLvweb() {
+		$this->subject->setLvweb('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'lvweb',
+			$this->subject
+		);
+	}
 }
-?>

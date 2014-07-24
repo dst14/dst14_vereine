@@ -1,3 +1,4 @@
+
 <f:layout name="Default" />
 
 This template displays a NEW form for the current domain object.
@@ -14,9 +15,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="main">
 <h1>New Ansprechpartner</h1>
 
-<f:flashMessages />
+<f:flashMessages renderMode="div" />
 
-<f:render partial="FormErrors" arguments="{object:Ansprechpartner}"/>
+<f:render partial="FormErrors" arguments="{object:Ansprechpartner}" />
 
 <f:form action="create"  name="newAnsprechpartner" object="{newAnsprechpartner}">
 <f:render partial="Ansprechpartner/FormFields" />

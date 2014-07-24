@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\Dst14Vereine\Domain\Model;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,113 +28,108 @@ namespace DanielStange\Dst14Vereine\Domain\Model;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst14_vereine
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Verein
  */
 class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Vereinsname
 	 *
-	 * @var \string
+	 * @var string
 	 * @validate NotEmpty
 	 */
-	protected $name;
+	protected $name = '';
 
 	/**
 	 * Straße und Hausnummer
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $strasse;
+	protected $strasse = '';
 
 	/**
 	 * Postfach
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $postfach;
+	protected $postfach = '';
 
 	/**
 	 * Postleitzahl
 	 *
-	 * @var \string
+	 * @var string
 	 * @validate NotEmpty
 	 */
-	protected $pLZ;
+	protected $pLZ = '';
 
 	/**
 	 * Ort
 	 *
-	 * @var \string
+	 * @var string
 	 * @validate NotEmpty
 	 */
-	protected $ort;
+	protected $ort = '';
 
 	/**
 	 * Land
 	 *
-	 * @var \string
+	 * @var string
 	 * @validate NotEmpty
 	 */
-	protected $land;
+	protected $land = '';
 
 	/**
 	 * Webseite
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $webseite;
+	protected $webseite = '';
 
 	/**
 	 * Emailadresse
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $email;
+	protected $email = '';
 
 	/**
 	 * lat
 	 *
-	 * @var \float
+	 * @var float
 	 */
-	protected $lat;
+	protected $lat = 0.0;
 
 	/**
 	 * lng
 	 *
-	 * @var \float
+	 * @var float
 	 */
-	protected $lng;
+	protected $lng = 0.0;
 
 	/**
 	 * lv
 	 *
 	 * @var \DanielStange\Dst14Vereine\Domain\Model\Landesverbaende
 	 */
-	protected $lv;
+	protected $lv = NULL;
 
 	/**
 	 * ansprechpartner
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner>
+	 * @cascade remove
 	 */
-	protected $ansprechpartner;
+	protected $ansprechpartner = NULL;
 
 	/**
 	 * sportarten
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DanielStange\Dst14Vereine\Domain\Model\Sportarten>
 	 */
-	protected $sportarten;
+	protected $sportarten = NULL;
 
 	/**
 	 * __construct
-	 *
-	 * @return Verein
 	 */
 	public function __construct() {
 		//Do not remove the next line: It would break the functionality
@@ -140,25 +137,22 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Initializes all ObjectStorage properties.
+	 * Initializes all ObjectStorage properties
+	 * Do not modify this method!
+	 * It will be rewritten on each save in the extension builder
+	 * You may modify the constructor of this class instead
 	 *
 	 * @return void
 	 */
 	protected function initStorageObjects() {
-		/**
-		 * Do not modify this method!
-		 * It will be rewritten on each save in the extension builder
-		 * You may modify the constructor of this class instead
-		 */
 		$this->ansprechpartner = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		
 		$this->sportarten = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
 	 * Returns the name
 	 *
-	 * @return \string $name
+	 * @return string $name
 	 */
 	public function getName() {
 		return $this->name;
@@ -167,7 +161,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the name
 	 *
-	 * @param \string $name
+	 * @param string $name
 	 * @return void
 	 */
 	public function setName($name) {
@@ -177,7 +171,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the strasse
 	 *
-	 * @return \string $strasse
+	 * @return string $strasse
 	 */
 	public function getStrasse() {
 		return $this->strasse;
@@ -186,7 +180,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the strasse
 	 *
-	 * @param \string $strasse
+	 * @param string $strasse
 	 * @return void
 	 */
 	public function setStrasse($strasse) {
@@ -196,7 +190,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the postfach
 	 *
-	 * @return \string $postfach
+	 * @return string $postfach
 	 */
 	public function getPostfach() {
 		return $this->postfach;
@@ -205,7 +199,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the postfach
 	 *
-	 * @param \string $postfach
+	 * @param string $postfach
 	 * @return void
 	 */
 	public function setPostfach($postfach) {
@@ -215,7 +209,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the pLZ
 	 *
-	 * @return \string $pLZ
+	 * @return string $pLZ
 	 */
 	public function getPLZ() {
 		return $this->pLZ;
@@ -224,7 +218,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the pLZ
 	 *
-	 * @param \string $pLZ
+	 * @param string $pLZ
 	 * @return void
 	 */
 	public function setPLZ($pLZ) {
@@ -234,7 +228,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the ort
 	 *
-	 * @return \string $ort
+	 * @return string $ort
 	 */
 	public function getOrt() {
 		return $this->ort;
@@ -243,7 +237,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the ort
 	 *
-	 * @param \string $ort
+	 * @param string $ort
 	 * @return void
 	 */
 	public function setOrt($ort) {
@@ -253,7 +247,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the land
 	 *
-	 * @return \string $land
+	 * @return string $land
 	 */
 	public function getLand() {
 		return $this->land;
@@ -262,7 +256,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the land
 	 *
-	 * @param \string $land
+	 * @param string $land
 	 * @return void
 	 */
 	public function setLand($land) {
@@ -272,7 +266,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the webseite
 	 *
-	 * @return \string $webseite
+	 * @return string $webseite
 	 */
 	public function getWebseite() {
 		return $this->webseite;
@@ -281,7 +275,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the webseite
 	 *
-	 * @param \string $webseite
+	 * @param string $webseite
 	 * @return void
 	 */
 	public function setWebseite($webseite) {
@@ -291,7 +285,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the email
 	 *
-	 * @return \string $email
+	 * @return string $email
 	 */
 	public function getEmail() {
 		return $this->email;
@@ -300,7 +294,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the email
 	 *
-	 * @param \string $email
+	 * @param string $email
 	 * @return void
 	 */
 	public function setEmail($email) {
@@ -310,7 +304,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the lat
 	 *
-	 * @return \float $lat
+	 * @return float $lat
 	 */
 	public function getLat() {
 		return $this->lat;
@@ -319,7 +313,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the lat
 	 *
-	 * @param \float $lat
+	 * @param float $lat
 	 * @return void
 	 */
 	public function setLat($lat) {
@@ -329,7 +323,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the lng
 	 *
-	 * @return \float $lng
+	 * @return float $lng
 	 */
 	public function getLng() {
 		return $this->lng;
@@ -338,7 +332,7 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the lng
 	 *
-	 * @param \float $lng
+	 * @param float $lng
 	 * @return void
 	 */
 	public function setLng($lng) {
@@ -443,4 +437,3 @@ class Verein extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 }
-?>

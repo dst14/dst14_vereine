@@ -3,18 +3,19 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_dst14vereine_domain_model_verein'] = array(
-	'ctrl' => $TCA['tx_dst14vereine_domain_model_verein']['ctrl'],
+$GLOBALS['TCA']['tx_dst14vereine_domain_model_verein'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_dst14vereine_domain_model_verein']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, strasse, postfach, p_l_z, ort, land, webseite, email, lat, lng, lv, ansprechpartner, sportarten',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, strasse, postfach, p_l_z, ort, land, webseite, email, lat, lng, lv, ansprechpartner, sportarten,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, strasse, postfach, p_l_z, ort, land, webseite, email, lat, lng, lv, ansprechpartner, sportarten, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
+	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -46,6 +47,7 @@ $TCA['tx_dst14vereine_domain_model_verein'] = array(
 				'type' => 'passthrough',
 			),
 		),
+
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -54,6 +56,7 @@ $TCA['tx_dst14vereine_domain_model_verein'] = array(
 				'max' => 255,
 			)
 		),
+	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -93,6 +96,7 @@ $TCA['tx_dst14vereine_domain_model_verein'] = array(
 				),
 			),
 		),
+
 		'name' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:dst14_vereine/Resources/Private/Language/locallang_db.xlf:tx_dst14vereine_domain_model_verein.name',
@@ -172,7 +176,7 @@ $TCA['tx_dst14vereine_domain_model_verein'] = array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'double2'
-			),
+			)
 		),
 		'lng' => array(
 			'exclude' => 0,
@@ -181,7 +185,7 @@ $TCA['tx_dst14vereine_domain_model_verein'] = array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'double2'
-			),
+			)
 		),
 		'lv' => array(
 			'exclude' => 0,
@@ -209,6 +213,7 @@ $TCA['tx_dst14vereine_domain_model_verein'] = array(
 					'showAllLocalizationLink' => 1
 				),
 			),
+
 		),
 		'sportarten' => array(
 			'exclude' => 0,
@@ -246,7 +251,6 @@ $TCA['tx_dst14vereine_domain_model_verein'] = array(
 				),
 			),
 		),
+		
 	),
 );
-
-?>

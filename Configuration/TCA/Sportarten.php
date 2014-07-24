@@ -3,18 +3,19 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_dst14vereine_domain_model_sportarten'] = array(
-	'ctrl' => $TCA['tx_dst14vereine_domain_model_sportarten']['ctrl'],
+$GLOBALS['TCA']['tx_dst14vereine_domain_model_sportarten'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_dst14vereine_domain_model_sportarten']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, bezeichnung, fachbereich, fbweb',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, bezeichnung, fachbereich, fbweb,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, bezeichnung, fachbereich, fbweb, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
+	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -46,6 +47,7 @@ $TCA['tx_dst14vereine_domain_model_sportarten'] = array(
 				'type' => 'passthrough',
 			),
 		),
+
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -54,6 +56,7 @@ $TCA['tx_dst14vereine_domain_model_sportarten'] = array(
 				'max' => 255,
 			)
 		),
+	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -93,6 +96,7 @@ $TCA['tx_dst14vereine_domain_model_sportarten'] = array(
 				),
 			),
 		),
+
 		'bezeichnung' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:dst14_vereine/Resources/Private/Language/locallang_db.xlf:tx_dst14vereine_domain_model_sportarten.bezeichnung',
@@ -120,7 +124,6 @@ $TCA['tx_dst14vereine_domain_model_sportarten'] = array(
 				'eval' => 'trim'
 			),
 		),
+		
 	),
 );
-
-?>

@@ -1,5 +1,5 @@
 <?php
-namespace DanielStange\Dst14Vereine\Tests;
+namespace DanielStange\Dst14Vereine\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,37 +25,118 @@ namespace DanielStange\Dst14Vereine\Tests;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Dst14_vereine_Controller_AnsprechpartnerController.
- *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
- * @package TYPO3
- * @subpackage Vereinsdatenbank und -karte
+ * Test case for class DanielStange\Dst14Vereine\Controller\AnsprechpartnerController.
  *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class AnsprechpartnerControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
+class AnsprechpartnerControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
+	/**
+	 * @var \DanielStange\Dst14Vereine\Controller\AnsprechpartnerController
+	 */
+	protected $subject = NULL;
+
+	protected function setUp() {
+		$this->subject = $this->getMock('DanielStange\\Dst14Vereine\\Controller\\AnsprechpartnerController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	public function listActionFetchesAllAnsprechpartnersFromRepositoryAndAssignsThemToView() {
+
+		$allAnsprechpartners = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+
+		$ansprechpartnerRepository = $this->getMock('', array('findAll'), array(), '', FALSE);
+		$ansprechpartnerRepository->expects($this->once())->method('findAll')->will($this->returnValue($allAnsprechpartners));
+		$this->inject($this->subject, 'ansprechpartnerRepository', $ansprechpartnerRepository);
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('ansprechpartners', $allAnsprechpartners);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->listAction();
 	}
 
+	/**
+	 * @test
+	 */
+	public function showActionAssignsTheGivenAnsprechpartnerToView() {
+		$ansprechpartner = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('ansprechpartner', $ansprechpartner);
+
+		$this->subject->showAction($ansprechpartner);
+	}
+
+	/**
+	 * @test
+	 */
+	public function newActionAssignsTheGivenAnsprechpartnerToView() {
+		$ansprechpartner = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('newAnsprechpartner', $ansprechpartner);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->newAction($ansprechpartner);
+	}
+
+	/**
+	 * @test
+	 */
+	public function createActionAddsTheGivenAnsprechpartnerToAnsprechpartnerRepository() {
+		$ansprechpartner = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
+
+		$ansprechpartnerRepository = $this->getMock('', array('add'), array(), '', FALSE);
+		$ansprechpartnerRepository->expects($this->once())->method('add')->with($ansprechpartner);
+		$this->inject($this->subject, 'ansprechpartnerRepository', $ansprechpartnerRepository);
+
+		$this->subject->createAction($ansprechpartner);
+	}
+
+	/**
+	 * @test
+	 */
+	public function editActionAssignsTheGivenAnsprechpartnerToView() {
+		$ansprechpartner = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('ansprechpartner', $ansprechpartner);
+
+		$this->subject->editAction($ansprechpartner);
+	}
+
+	/**
+	 * @test
+	 */
+	public function updateActionUpdatesTheGivenAnsprechpartnerInAnsprechpartnerRepository() {
+		$ansprechpartner = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
+
+		$ansprechpartnerRepository = $this->getMock('', array('update'), array(), '', FALSE);
+		$ansprechpartnerRepository->expects($this->once())->method('update')->with($ansprechpartner);
+		$this->inject($this->subject, 'ansprechpartnerRepository', $ansprechpartnerRepository);
+
+		$this->subject->updateAction($ansprechpartner);
+	}
+
+	/**
+	 * @test
+	 */
+	public function deleteActionRemovesTheGivenAnsprechpartnerFromAnsprechpartnerRepository() {
+		$ansprechpartner = new \DanielStange\Dst14Vereine\Domain\Model\Ansprechpartner();
+
+		$ansprechpartnerRepository = $this->getMock('', array('remove'), array(), '', FALSE);
+		$ansprechpartnerRepository->expects($this->once())->method('remove')->with($ansprechpartner);
+		$this->inject($this->subject, 'ansprechpartnerRepository', $ansprechpartnerRepository);
+
+		$this->subject->deleteAction($ansprechpartner);
+	}
 }
-?>

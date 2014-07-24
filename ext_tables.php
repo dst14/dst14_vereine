@@ -1,6 +1,6 @@
 <?php
 if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+	die('Access denied.');
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
@@ -10,7 +10,7 @@ if (!defined('TYPO3_MODE')) {
 );
 
 $pluginSignature = str_replace('_','',$_EXTKEY) . '_vereine';
-$TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_vereine.xml');
 
 if (TYPO3_MODE === 'BE') {
@@ -39,7 +39,7 @@ if (TYPO3_MODE === 'BE') {
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_dst14vereine_domain_model_verein', 'EXT:dst14_vereine/Resources/Private/Language/locallang_csh_tx_dst14vereine_domain_model_verein.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_dst14vereine_domain_model_verein');
-$TCA['tx_dst14vereine_domain_model_verein'] = array(
+$GLOBALS['TCA']['tx_dst14vereine_domain_model_verein'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:dst14_vereine/Resources/Private/Language/locallang_db.xlf:tx_dst14vereine_domain_model_verein',
 		'label' => 'name',
@@ -50,7 +50,7 @@ $TCA['tx_dst14vereine_domain_model_verein'] = array(
 
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
+
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -68,7 +68,7 @@ $TCA['tx_dst14vereine_domain_model_verein'] = array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_dst14vereine_domain_model_sportarten', 'EXT:dst14_vereine/Resources/Private/Language/locallang_csh_tx_dst14vereine_domain_model_sportarten.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_dst14vereine_domain_model_sportarten');
-$TCA['tx_dst14vereine_domain_model_sportarten'] = array(
+$GLOBALS['TCA']['tx_dst14vereine_domain_model_sportarten'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:dst14_vereine/Resources/Private/Language/locallang_db.xlf:tx_dst14vereine_domain_model_sportarten',
 		'label' => 'bezeichnung',
@@ -79,7 +79,7 @@ $TCA['tx_dst14vereine_domain_model_sportarten'] = array(
 
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
+
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -97,10 +97,10 @@ $TCA['tx_dst14vereine_domain_model_sportarten'] = array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_dst14vereine_domain_model_landesverbaende', 'EXT:dst14_vereine/Resources/Private/Language/locallang_csh_tx_dst14vereine_domain_model_landesverbaende.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_dst14vereine_domain_model_landesverbaende');
-$TCA['tx_dst14vereine_domain_model_landesverbaende'] = array(
+$GLOBALS['TCA']['tx_dst14vereine_domain_model_landesverbaende'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:dst14_vereine/Resources/Private/Language/locallang_db.xlf:tx_dst14vereine_domain_model_landesverbaende',
-		'label' => 'namelv',
+		'label' => 'bundesland',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -108,7 +108,7 @@ $TCA['tx_dst14vereine_domain_model_landesverbaende'] = array(
 
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
+
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -118,7 +118,7 @@ $TCA['tx_dst14vereine_domain_model_landesverbaende'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'namelv,lvweb,',
+		'searchFields' => 'bundesland,namelv,lvweb,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Landesverbaende.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_dst14vereine_domain_model_landesverbaende.gif'
 	),
@@ -126,7 +126,7 @@ $TCA['tx_dst14vereine_domain_model_landesverbaende'] = array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_dst14vereine_domain_model_ansprechpartner', 'EXT:dst14_vereine/Resources/Private/Language/locallang_csh_tx_dst14vereine_domain_model_ansprechpartner.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_dst14vereine_domain_model_ansprechpartner');
-$TCA['tx_dst14vereine_domain_model_ansprechpartner'] = array(
+$GLOBALS['TCA']['tx_dst14vereine_domain_model_ansprechpartner'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:dst14_vereine/Resources/Private/Language/locallang_db.xlf:tx_dst14vereine_domain_model_ansprechpartner',
 		'label' => 'name',
@@ -137,7 +137,7 @@ $TCA['tx_dst14vereine_domain_model_ansprechpartner'] = array(
 
 		'versioningWS' => 2,
 		'versioning_followPages' => TRUE,
-		'origUid' => 't3_origuid',
+
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -152,5 +152,3 @@ $TCA['tx_dst14vereine_domain_model_ansprechpartner'] = array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_dst14vereine_domain_model_ansprechpartner.gif'
 	),
 );
-
-?>

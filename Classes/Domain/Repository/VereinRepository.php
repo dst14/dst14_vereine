@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\Dst14Vereine\Domain\Repository;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,13 +28,9 @@ namespace DanielStange\Dst14Vereine\Domain\Repository;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst14_vereine
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * The repository for Vereins
  */
 class VereinRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
+	
 }
-?>

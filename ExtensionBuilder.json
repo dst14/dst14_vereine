@@ -1,1 +1,541 @@
-{"modules":[{"config":{"position":[143,64]},"name":"New Model Object","value":{"actionGroup":{"_default0_list":true,"_default1_show":true,"_default2_new_create":true,"_default3_edit_update":true,"_default4_delete":true,"customActions":[]},"name":"Verein","objectsettings":{"aggregateRoot":true,"description":"","mapToTable":"","parentClass":"","sorting":false,"type":"Entity","uid":"1118656425490"},"propertyGroup":{"properties":[{"propertyDescription":"Vereinsname","propertyIsExcludeField":false,"propertyIsRequired":true,"propertyName":"name","propertyType":"String","uid":"1079698180881"},{"propertyDescription":"Stra\u00dfe und Hausnummer","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"strasse","propertyType":"String","uid":"433078633288"},{"propertyDescription":"Postfach","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"postfach","propertyType":"String","uid":"1331677868116"},{"propertyDescription":"Postleitzahl","propertyIsExcludeField":false,"propertyIsRequired":true,"propertyName":"pLZ","propertyType":"String","uid":"1008220852090"},{"propertyDescription":"Ort","propertyIsExcludeField":false,"propertyIsRequired":true,"propertyName":"ort","propertyType":"String","uid":"251348247780"},{"propertyDescription":"Land","propertyIsExcludeField":false,"propertyIsRequired":true,"propertyName":"land","propertyType":"String","uid":"1315229840837"},{"propertyDescription":"Webseite","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"webseite","propertyType":"String","uid":"718894528821"},{"propertyDescription":"Emailadresse","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"email","propertyType":"String","uid":"159538971220"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"lat","propertyType":"Float","uid":"499550033500"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"lng","propertyType":"Float","uid":"1121590933831"}]},"relationGroup":{"relations":[{"foreignRelationClass":"","lazyLoading":false,"propertyIsExcludeField":false,"relationDescription":"","relationName":"lv","relationType":"manyToOne","relationWire":"[wired]","uid":"435270677080"},{"foreignRelationClass":"","lazyLoading":false,"propertyIsExcludeField":false,"relationDescription":"","relationName":"ansprechpartner","relationType":"zeroToMany","relationWire":"[wired]","uid":"47883286238"},{"foreignRelationClass":"","lazyLoading":false,"propertyIsExcludeField":false,"relationDescription":"","relationName":"sportarten","relationType":"manyToMany","relationWire":"[wired]","uid":"276113928762"}]}}},{"config":{"position":[95,372]},"name":"New Model Object","value":{"actionGroup":{"_default0_list":true,"_default1_show":true,"_default2_new_create":true,"_default3_edit_update":true,"_default4_delete":true,"customActions":[]},"name":"Sportarten","objectsettings":{"aggregateRoot":false,"description":"Sportartenauswahl","mapToTable":"","parentClass":"","sorting":false,"type":"ValueObject","uid":"1088854521399"},"propertyGroup":{"properties":[{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":true,"propertyName":"bezeichnung","propertyType":"String","uid":"565858843179"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"fachbereich","propertyType":"String","uid":"1282832079022"},{"propertyDescription":"fachbereichswebseite","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"fbweb","propertyType":"String","uid":"963023096148"}]},"relationGroup":{"relations":[]}}},{"config":{"position":[519,140]},"name":"New Model Object","value":{"actionGroup":{"_default0_list":true,"_default1_show":true,"_default2_new_create":true,"_default3_edit_update":true,"_default4_delete":true,"customActions":[]},"name":"Landesverbaende","objectsettings":{"aggregateRoot":false,"description":"","mapToTable":"","parentClass":"","sorting":false,"type":"ValueObject","uid":"1347259305619"},"propertyGroup":{"properties":[{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":true,"propertyName":"namelv","propertyType":"String","uid":"98057430713"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"lvweb","propertyType":"String","uid":"1333845875947"}]},"relationGroup":{"relations":[]}}},{"config":{"position":[504,286]},"name":"New Model Object","value":{"actionGroup":{"_default0_list":true,"_default1_show":true,"_default2_new_create":true,"_default3_edit_update":true,"_default4_delete":true,"customActions":[]},"name":"Ansprechpartner","objectsettings":{"aggregateRoot":false,"description":"","mapToTable":"","parentClass":"","sorting":false,"type":"Entity","uid":"1214588734637"},"propertyGroup":{"properties":[{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"name","propertyType":"String","uid":"1212288800830"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"vorname","propertyType":"String","uid":"271356206335"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"email","propertyType":"String","uid":"515080397063"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"tel","propertyType":"String","uid":"1373740090897"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"fax","propertyType":"String","uid":"445717371873"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"tel2","propertyType":"String","uid":"1076380363513"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"mobil","propertyType":"String","uid":"736011996845"},{"propertyDescription":"","propertyIsExcludeField":false,"propertyIsRequired":false,"propertyName":"bemerkungen","propertyType":"String","uid":"197191011807"}]},"relationGroup":{"relations":[]}}}],"properties":{"backendModules":[{"actions":{"controllerActionCombinations":""},"description":"","key":"Vereine","mainModule":"web","name":"Vereinsdatenbank","tabLabel":"Vereine"}],"description":"Vereinsdatenbank","emConf":{"category":"plugin","custom_category":"","dependsOn":"extbase => 6.0\nfluid => 6.0\ntypo3 => 6.0\n","disableVersioning":false,"priority":"","shy":false,"state":"alpha","targetVersion":"6.0","version":""},"extensionKey":"dst14_vereine","name":"Vereinsdatenbank und -karte","originalExtensionKey":"dst14_vereine","persons":[{"company":"","email":"daniel.stange@gmail.com","name":"Daniel Stange","role":"Developer"}],"plugins":[{"actions":{"controllerActionCombinations":"\n","noncacheableActions":"\n","switchableActions":"Vereinsliste\nVerein->list;\nEinzelansicht\nVerein->show;"},"key":"Vereine","name":"Vereinsdatenbank"}],"vendorName":"DanielStange"},"wires":[{"src":{"moduleId":0,"terminal":"relationWire_2","uid":"276113928762"},"tgt":{"moduleId":1,"terminal":"SOURCES","uid":"1088854521399"}},{"src":{"moduleId":0,"terminal":"relationWire_0","uid":"435270677080"},"tgt":{"moduleId":2,"terminal":"SOURCES","uid":"1347259305619"}},{"src":{"moduleId":0,"terminal":"relationWire_1","uid":"47883286238"},"tgt":{"moduleId":3,"terminal":"SOURCES","uid":"1214588734637"}}],"log":{"last_modified":"2014-02-01 11:18","extension_builder_version":"2.5.2","be_user":"Daniel Stange (2)"}}
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    143,
+                    64
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Verein",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1118656425490"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Vereinsname",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "name",
+                            "propertyType": "String",
+                            "uid": "1079698180881"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Stra\u00dfe und Hausnummer",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "strasse",
+                            "propertyType": "String",
+                            "uid": "433078633288"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Postfach",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "postfach",
+                            "propertyType": "String",
+                            "uid": "1331677868116"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Postleitzahl",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "pLZ",
+                            "propertyType": "String",
+                            "uid": "1008220852090"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ort",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "ort",
+                            "propertyType": "String",
+                            "uid": "251348247780"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Land",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "land",
+                            "propertyType": "String",
+                            "uid": "1315229840837"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Webseite",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "webseite",
+                            "propertyType": "String",
+                            "uid": "718894528821"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Emailadresse",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "email",
+                            "propertyType": "String",
+                            "uid": "159538971220"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "lat",
+                            "propertyType": "Float",
+                            "uid": "499550033500"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "lng",
+                            "propertyType": "Float",
+                            "uid": "1121590933831"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": false,
+                            "relationDescription": "",
+                            "relationName": "lv",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "uid": "435270677080"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": false,
+                            "relationDescription": "",
+                            "relationName": "ansprechpartner",
+                            "relationType": "zeroToMany",
+                            "relationWire": "[wired]",
+                            "uid": "47883286238"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": false,
+                            "relationDescription": "",
+                            "relationName": "sportarten",
+                            "relationType": "manyToMany",
+                            "relationWire": "[wired]",
+                            "uid": "276113928762"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    106,
+                    274
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Sportarten",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "Sportartenauswahl",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "ValueObject",
+                    "uid": "1088854521399"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "bezeichnung",
+                            "propertyType": "String",
+                            "uid": "565858843179"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "fachbereich",
+                            "propertyType": "String",
+                            "uid": "1282832079022"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "fachbereichswebseite",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "fbweb",
+                            "propertyType": "String",
+                            "uid": "963023096148"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    519,
+                    140
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Landesverbaende",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "ValueObject",
+                    "uid": "1347259305619"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "bundesland",
+                            "propertyType": "String",
+                            "uid": "321871655432"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "namelv",
+                            "propertyType": "String",
+                            "uid": "98057430713"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "lvweb",
+                            "propertyType": "String",
+                            "uid": "1333845875947"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    504,
+                    286
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Ansprechpartner",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1214588734637"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "name",
+                            "propertyType": "String",
+                            "uid": "1212288800830"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "vorname",
+                            "propertyType": "String",
+                            "uid": "271356206335"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "email",
+                            "propertyType": "String",
+                            "uid": "515080397063"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "tel",
+                            "propertyType": "String",
+                            "uid": "1373740090897"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "fax",
+                            "propertyType": "String",
+                            "uid": "445717371873"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "tel2",
+                            "propertyType": "String",
+                            "uid": "1076380363513"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "mobil",
+                            "propertyType": "String",
+                            "uid": "736011996845"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "bemerkungen",
+                            "propertyType": "String",
+                            "uid": "197191011807"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+            {
+                "actions": {
+                    "controllerActionCombinations": ""
+                },
+                "description": "",
+                "key": "Vereine",
+                "mainModule": "web",
+                "name": "Vereinsdatenbank",
+                "tabLabel": "Vereine"
+            }
+        ],
+        "description": "Vereinsdatenbank",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "extbase => 6.0\nfluid => 6.0\ntypo3 => 6.0\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": ""
+        },
+        "extensionKey": "dst14_vereine",
+        "name": "Vereinsdatenbank und -karte",
+        "originalExtensionKey": "dst14_vereine",
+        "persons": [
+            {
+                "company": "",
+                "email": "daniel.stange@gmail.com",
+                "name": "Daniel Stange",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "\n",
+                    "noncacheableActions": "\n",
+                    "switchableActions": "Vereinsliste\nVerein->list;\nEinzelansicht\nVerein->show;"
+                },
+                "key": "Vereine",
+                "name": "Vereinsdatenbank"
+            }
+        ],
+        "vendorName": "DanielStange"
+    },
+    "wires": [
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_2",
+                "uid": "276113928762"
+            },
+            "tgt": {
+                "moduleId": 1,
+                "terminal": "SOURCES",
+                "uid": "1088854521399"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_0",
+                "uid": "435270677080"
+            },
+            "tgt": {
+                "moduleId": 2,
+                "terminal": "SOURCES",
+                "uid": "1347259305619"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_1",
+                "uid": "47883286238"
+            },
+            "tgt": {
+                "moduleId": 3,
+                "terminal": "SOURCES",
+                "uid": "1214588734637"
+            }
+        }
+    ],
+    "log": {
+        "last_modified": "2014-07-18 03:52",
+        "extension_builder_version": "6.2.0",
+        "be_user": "Daniel Stange (1)"
+    }
+}

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-01T11:17:57Z" product-name="dst14_vereine">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-18T15:52:39Z" product-name="dst14_vereine">
 		<header/>
 		<body>
-
 			<trans-unit id="tx_dst14vereine_domain_model_verein">
 				<source>Verein</source>
 			</trans-unit>
@@ -46,7 +45,6 @@
 			<trans-unit id="tx_dst14vereine_domain_model_verein.sportarten">
 				<source>Sportarten</source>
 			</trans-unit>
-
 			<trans-unit id="tx_dst14vereine_domain_model_sportarten">
 				<source>Sportarten</source>
 			</trans-unit>
@@ -59,9 +57,11 @@
 			<trans-unit id="tx_dst14vereine_domain_model_sportarten.fbweb">
 				<source>Fbweb</source>
 			</trans-unit>
-
 			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende">
 				<source>Landesverbaende</source>
+			</trans-unit>
+			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende.bundesland">
+				<source>Bundesland</source>
 			</trans-unit>
 			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende.namelv">
 				<source>Namelv</source>
@@ -69,7 +69,6 @@
 			<trans-unit id="tx_dst14vereine_domain_model_landesverbaende.lvweb">
 				<source>Lvweb</source>
 			</trans-unit>
-
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner">
 				<source>Ansprechpartner</source>
 			</trans-unit>
@@ -97,7 +96,6 @@
 			<trans-unit id="tx_dst14vereine_domain_model_ansprechpartner.bemerkungen">
 				<source>Bemerkungen</source>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>

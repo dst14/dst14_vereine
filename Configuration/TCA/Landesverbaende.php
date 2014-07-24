@@ -3,18 +3,19 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_dst14vereine_domain_model_landesverbaende'] = array(
-	'ctrl' => $TCA['tx_dst14vereine_domain_model_landesverbaende']['ctrl'],
+$GLOBALS['TCA']['tx_dst14vereine_domain_model_landesverbaende'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_dst14vereine_domain_model_landesverbaende']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, namelv, lvweb',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, bundesland, namelv, lvweb',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, namelv, lvweb,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, bundesland, namelv, lvweb, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
+	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -46,6 +47,7 @@ $TCA['tx_dst14vereine_domain_model_landesverbaende'] = array(
 				'type' => 'passthrough',
 			),
 		),
+
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -54,6 +56,7 @@ $TCA['tx_dst14vereine_domain_model_landesverbaende'] = array(
 				'max' => 255,
 			)
 		),
+	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -93,6 +96,16 @@ $TCA['tx_dst14vereine_domain_model_landesverbaende'] = array(
 				),
 			),
 		),
+
+		'bundesland' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:dst14_vereine/Resources/Private/Language/locallang_db.xlf:tx_dst14vereine_domain_model_landesverbaende.bundesland',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
 		'namelv' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:dst14_vereine/Resources/Private/Language/locallang_db.xlf:tx_dst14vereine_domain_model_landesverbaende.namelv',
@@ -111,7 +124,6 @@ $TCA['tx_dst14vereine_domain_model_landesverbaende'] = array(
 				'eval' => 'trim'
 			),
 		),
+		
 	),
 );
-
-?>

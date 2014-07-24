@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\Dst14Vereine\Domain\Model;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,40 +28,36 @@ namespace DanielStange\Dst14Vereine\Domain\Model;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst14_vereine
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Sportartenauswahl
  */
 class Sportarten extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 
 	/**
 	 * bezeichnung
 	 *
-	 * @var \string
+	 * @var string
 	 * @validate NotEmpty
 	 */
-	protected $bezeichnung;
+	protected $bezeichnung = '';
 
 	/**
 	 * fachbereich
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $fachbereich;
+	protected $fachbereich = '';
 
 	/**
 	 * fachbereichswebseite
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $fbweb;
+	protected $fbweb = '';
 
 	/**
 	 * Returns the bezeichnung
 	 *
-	 * @return \string $bezeichnung
+	 * @return string $bezeichnung
 	 */
 	public function getBezeichnung() {
 		return $this->bezeichnung;
@@ -68,7 +66,7 @@ class Sportarten extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	/**
 	 * Sets the bezeichnung
 	 *
-	 * @param \string $bezeichnung
+	 * @param string $bezeichnung
 	 * @return void
 	 */
 	public function setBezeichnung($bezeichnung) {
@@ -78,7 +76,7 @@ class Sportarten extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	/**
 	 * Returns the fachbereich
 	 *
-	 * @return \string $fachbereich
+	 * @return string $fachbereich
 	 */
 	public function getFachbereich() {
 		return $this->fachbereich;
@@ -87,7 +85,7 @@ class Sportarten extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	/**
 	 * Sets the fachbereich
 	 *
-	 * @param \string $fachbereich
+	 * @param string $fachbereich
 	 * @return void
 	 */
 	public function setFachbereich($fachbereich) {
@@ -97,7 +95,7 @@ class Sportarten extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	/**
 	 * Returns the fbweb
 	 *
-	 * @return \string $fbweb
+	 * @return string $fbweb
 	 */
 	public function getFbweb() {
 		return $this->fbweb;
@@ -106,7 +104,7 @@ class Sportarten extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	/**
 	 * Sets the fbweb
 	 *
-	 * @param \string $fbweb
+	 * @param string $fbweb
 	 * @return void
 	 */
 	public function setFbweb($fbweb) {
@@ -114,4 +112,3 @@ class Sportarten extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	}
 
 }
-?>

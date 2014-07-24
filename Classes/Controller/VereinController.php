@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\Dst14Vereine\Controller;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,11 +28,7 @@ namespace DanielStange\Dst14Vereine\Controller;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst14_vereine
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * VereinController
  */
 class VereinController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
@@ -40,7 +38,7 @@ class VereinController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @var \DanielStange\Dst14Vereine\Domain\Repository\VereinRepository
 	 * @inject
 	 */
-	protected $vereinRepository;
+	protected $vereinRepository = NULL;
 
 	/**
 	 * action list
@@ -66,7 +64,7 @@ class VereinController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * action new
 	 *
 	 * @param \DanielStange\Dst14Vereine\Domain\Model\Verein $newVerein
-	 * @dontvalidate $newVerein
+	 * @ignorevalidation $newVerein
 	 * @return void
 	 */
 	public function newAction(\DanielStange\Dst14Vereine\Domain\Model\Verein $newVerein = NULL) {
@@ -80,8 +78,8 @@ class VereinController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @return void
 	 */
 	public function createAction(\DanielStange\Dst14Vereine\Domain\Model\Verein $newVerein) {
+		$this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->vereinRepository->add($newVerein);
-		$this->flashMessageContainer->add('Your new Verein was created.');
 		$this->redirect('list');
 	}
 
@@ -89,6 +87,7 @@ class VereinController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * action edit
 	 *
 	 * @param \DanielStange\Dst14Vereine\Domain\Model\Verein $verein
+	 * @ignorevalidation $verein
 	 * @return void
 	 */
 	public function editAction(\DanielStange\Dst14Vereine\Domain\Model\Verein $verein) {
@@ -102,8 +101,8 @@ class VereinController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @return void
 	 */
 	public function updateAction(\DanielStange\Dst14Vereine\Domain\Model\Verein $verein) {
+		$this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->vereinRepository->update($verein);
-		$this->flashMessageContainer->add('Your Verein was updated.');
 		$this->redirect('list');
 	}
 
@@ -114,10 +113,9 @@ class VereinController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 	 * @return void
 	 */
 	public function deleteAction(\DanielStange\Dst14Vereine\Domain\Model\Verein $verein) {
+		$this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->vereinRepository->remove($verein);
-		$this->flashMessageContainer->add('Your Verein was removed.');
 		$this->redirect('list');
 	}
 
 }
-?>
